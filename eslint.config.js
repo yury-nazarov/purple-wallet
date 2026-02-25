@@ -3,6 +3,7 @@ const eslint = require("@eslint/js");
 const { defineConfig } = require("eslint/config");
 const tseslint = require("typescript-eslint");
 const angular = require("angular-eslint");
+const prettier = require("eslint-config-prettier/flat");
 
 module.exports = defineConfig([
   {
@@ -12,6 +13,8 @@ module.exports = defineConfig([
       tseslint.configs.recommended,
       tseslint.configs.stylistic,
       angular.configs.tsRecommended,
+      // Добавляем prettier для HTML
+      prettier,
     ],
     processor: angular.processInlineTemplates,
     rules: {
@@ -31,6 +34,8 @@ module.exports = defineConfig([
           style: "kebab-case",
         },
       ],
+      // Проверка точки запятой в конце строки
+      semi: ["error", "always"],
     },
   },
   {
@@ -38,6 +43,8 @@ module.exports = defineConfig([
     extends: [
       angular.configs.templateRecommended,
       angular.configs.templateAccessibility,
+      // Добавляем prettier для HTML
+      prettier,
     ],
     rules: {},
   }
