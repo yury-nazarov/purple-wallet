@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import {Component, Input, ViewEncapsulation} from '@angular/core';
 
 // Декоратор добавляет мета данные класса
 // Это функция, которая принимает в себя объект, с обязательными параметрами
@@ -6,10 +6,13 @@ import {Component, ViewEncapsulation} from '@angular/core';
   selector: 'app-button',
   templateUrl: './button.component.html',
   styleUrls: ['./button.component.scss'],
-  // encapsulation: ViewEncapsulation.None // Отключает инкапсуляцию стилей в ангуляр, позволяя задавать селекторы на прямую в html DOM
+  // encapsulation: ViewEncapsulation.None      // Отключает инкапсуляцию стилей в ангуляр, позволяя задавать селекторы на прямую в html DOM
   // encapsulation: ViewEncapsulation.ShadowDom // Инкапсуляция стилей применяется к конкретному элементу, а не всей странице через head
-  encapsulation: ViewEncapsulation.Emulated, // Используется по умолчанию
+  encapsulation: ViewEncapsulation.Emulated,    // Используется по умолчанию
 })
 export class ButtonComponent {
-
+  @Input() title = '';
 }
+
+
+
