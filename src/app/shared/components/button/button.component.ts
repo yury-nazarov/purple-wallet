@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
+import {Component, Input} from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -7,13 +7,8 @@ import {Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angula
 })
 export class ButtonComponent {
   @Input() title = '';
+  @Input() disabled = false;
 
-  @Output() btnClick: EventEmitter<void> = new EventEmitter<void>();
-
-  onBtnClick(): void {
-    //throw new Error("Method not implemented")
-    this.btnClick.emit();
-  }
 }
 
 
