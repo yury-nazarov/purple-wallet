@@ -1,8 +1,5 @@
-import {Component, Input, ViewEncapsulation} from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import {Component, EventEmitter, Input, Output, ViewEncapsulation} from '@angular/core';
 
-// Декоратор добавляет мета данные класса
-// Это функция, которая принимает в себя объект, с обязательными параметрами
 @Component({
   selector: 'app-button',
   templateUrl: './button.component.html',
@@ -10,6 +7,13 @@ import { FormsModule } from '@angular/forms';
 })
 export class ButtonComponent {
   @Input() title = '';
+
+  @Output() btnClick: EventEmitter<void> = new EventEmitter<void>();
+
+  onBtnClick(): void {
+    //throw new Error("Method not implemented")
+    this.btnClick.emit();
+  }
 }
 
 

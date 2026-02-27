@@ -9,4 +9,9 @@ import {ButtonComponent} from './shared/components/button/button.component';
 })
 export class App {
   protected readonly title = signal('purple-wallet');
+
+  onBtnClick(): void {
+    console.log('btn Click');
+  }
 }
+
