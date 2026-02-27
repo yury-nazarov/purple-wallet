@@ -12,9 +12,11 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
 })
 export class ButtonComponent {
   @Input() title = '';
+  value: string = "";
 
   onClickEvent(event: Event) {
     console.log("Event", event);
+    this.value = "Новое значение";
   }
 }
 
