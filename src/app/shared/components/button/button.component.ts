@@ -12,6 +12,10 @@ import {Component, Input, ViewEncapsulation} from '@angular/core';
 })
 export class ButtonComponent {
   @Input() title = '';
+
+  onClickEvent(event: Event) {
+    console.log("Event", event);
+  }
 }
 
 
