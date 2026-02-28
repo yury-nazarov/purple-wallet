@@ -2,10 +2,11 @@ import {Component} from '@angular/core';
 import {ButtonComponent} from '../../shared/components/button/button.component';
 import {PasswordInputComponent} from '../../shared/components/password-input/password-input.component';
 import {InputComponent} from '../../shared/components/input/input.component';
+import {NgOptimizedImage} from '@angular/common';
 
 @Component({
   selector: 'app-layout',
-  imports: [ButtonComponent, InputComponent, PasswordInputComponent],
+  imports: [ButtonComponent, InputComponent, PasswordInputComponent, NgOptimizedImage],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
   standalone: true,

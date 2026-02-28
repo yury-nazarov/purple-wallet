@@ -1,10 +1,27 @@
-<app-button title="Новая кнопка" ></app-button>
+<div class="layout">
+  <div class="layout__image">
+    <div class="layout__logo">
+      <img ngSrc="images/logo.svg" alt="Cryptic Logo" width="445" height="107" class="layout__logo--image">
+    </div>
+  </div>
+  <div class="layout__page">
 
-<app-input
-  iconUrl="icons/mail.svg"
-  placeholder="Email"
-  (controlValue)="onInputChange($event)" />
+    <div class="login__container">
+      <h1 class="login__heading">Вход</h1>
+      <div class="login__form">
+        <app-input
+          class="login__form-control"
+          iconUrl="icons/mail.svg"
+          placeholder="Email"
+          (controlValue)="onInputChange($event)" ></app-input>
 
-<app-password-input
-  iconUrl="icons/lock.svg"
-  (controlValue)="onInputChange($event)" />
+        <app-password-input
+          class="login__form-control"
+          iconUrl="icons/lock.svg"
+          (controlValue)="onInputChange($event)" ></app-password-input>
+
+        <app-button title="Войти"></app-button>
+      </div>
+    </div>
+  </div>
+</div>
