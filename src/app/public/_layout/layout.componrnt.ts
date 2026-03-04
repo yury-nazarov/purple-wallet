@@ -12,16 +12,9 @@ import {ActivatedRoute, RouterLink} from '@angular/router';
   styleUrl: './layout.component.scss',
   standalone: true,
 })
-export class PublicLayoutComponent implements OnInit {
+export class PublicLayoutComponent {
 
-  // @ts-ignore
-  public activatedRoute: ActivatedRoute = inject(ActivatedRoute);
 
   onInputChange($event: string | null) {}
 
-  ngOnInit(): void {
-    // http://localhost:4200/public/data
-    // Читаем из свойства params: from: data
-    console.log(this.activatedRoute.snapshot);
-  }
 }
