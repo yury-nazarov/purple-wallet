@@ -20,7 +20,7 @@
           iconUrl="icons/lock.svg"
           (controlValue)="onInputChange($event)" ></app-password-input>
 
-        <app-button routerLink="/private" title="Войти"></app-button>
+        <app-button (click)="onLoginBtnClick()" title="Войти"></app-button>
       </div>
     </div>
   </div>
