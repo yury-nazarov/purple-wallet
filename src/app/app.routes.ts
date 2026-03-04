@@ -4,7 +4,7 @@ import {PrivateLayoutComponent} from './private/_layout/layout.componrnt';
 
 export const routes: Routes = [
   {
-    path: 'public',
+    path: 'public/:from',
     component: PublicLayoutComponent,
   },
   {

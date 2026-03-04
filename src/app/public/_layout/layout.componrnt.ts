@@ -20,7 +20,8 @@ export class PublicLayoutComponent implements OnInit {
   onInputChange($event: string | null) {}
 
   ngOnInit(): void {
-    // Позволяет получать QueryParam из пути: http://localhost:4200/public?from=main
+    // http://localhost:4200/public/data
+    // Читаем из свойства params: from: data
     console.log(this.activatedRoute.snapshot);
   }
 }
