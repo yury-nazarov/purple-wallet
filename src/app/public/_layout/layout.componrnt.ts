@@ -1,9 +1,9 @@
-import {Component} from '@angular/core';
+import {inject, Component, OnInit} from '@angular/core';
 import {ButtonComponent} from '../../shared/components/button/button.component';
 import {PasswordInputComponent} from '../../shared/components/password-input/password-input.component';
 import {InputComponent} from '../../shared/components/input/input.component';
 import {NgOptimizedImage} from '@angular/common';
-import {RouterLink} from '@angular/router';
+import {ActivatedRoute, RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-layout',
@@ -12,9 +12,15 @@ import {RouterLink} from '@angular/router';
   styleUrl: './layout.component.scss',
   standalone: true,
 })
-export class PublicLayoutComponent {
+export class PublicLayoutComponent implements OnInit {
 
-  onInputChange($event: string | null) {
+  // @ts-ignore
+  public activatedRoute: ActivatedRoute = inject(ActivatedRoute);
 
+  onInputChange($event: string | null) {}
+
+  ngOnInit(): void {
+    // Позволяет получать QueryParam из пути: http://localhost:4200/public?from=main
+    console.log(this.activatedRoute.snapshot);
   }
 }
