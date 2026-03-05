@@ -3,6 +3,7 @@ import {PublicLayoutComponent} from './public/_layout/layout.componrnt';
 import {PrivateLayoutComponent} from './private/_layout/layout.componrnt';
 import {LogInComponent} from './public/pages/log-in/log-in.component';
 import {DashboardComponent} from './private/pages/dashboard/dashboard.component';
+import {authGuard} from './shared/guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -22,6 +23,7 @@ export const routes: Routes = [
   {
     path: 'private',
     component: PrivateLayoutComponent,
+    canActivate: [authGuard],
     children: [
       {
         path: 'dashboard',
