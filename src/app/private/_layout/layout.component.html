@@ -1,3 +1,37 @@
-Private Layout
+<div class="block__start">
+  <!-- Лого -->
+  <div class="start__logo">
+    <img ngSrc="images/logo.svg" width="170" height="41" alt="logo">
+  </div>
 
-<router-outlet></router-outlet>
+  <!-- Сайдбар меню -->
+  <div class="start__menu">
+    @for (item of navLinks; track item.id) {
+      <app-nav-button
+        class="start__dashboard-button"
+        [text]="item.text"
+        [iconUrl]="item.iconUrl"
+        [iconUrlActive]="item.iconUrlActive"
+        [routerLink]="item.link"
+        routerLinkActive="active"
+      ></app-nav-button>
+    }
+  </div>
+
+  <!-- Кнопка выхода -->
+  <div class="start__exit-link">
+    Exit button
+  </div>
+</div>
+
+<!-- Навбар -->
+<div class="block__end">
+  <div class="end__nav">
+    header
+  </div>
+
+  <!-- Контент страницы -->
+  <div class="end__container">
+    <router-outlet></router-outlet>
+  </div>
+</div>

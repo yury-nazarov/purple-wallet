@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
-import {RouterOutlet} from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
+import {NgOptimizedImage} from '@angular/common';
+import {NavButtonComponent} from '../../shared/components/nav-button/nav-button.component';
+import {INavConst, NAV_CONST} from '../../shared/const/menu-items.const';
 
 @Component({
   selector: 'app-private-layout',
@@ -7,9 +10,15 @@ import {RouterOutlet} from '@angular/router';
   styleUrl: './layout.component.scss',
   standalone: true,
   imports: [
-    RouterOutlet
+    RouterOutlet,
+    NgOptimizedImage,
+    NavButtonComponent,
+    RouterLink,
+    RouterLinkActive
   ]
 })
 export class PrivateLayoutComponent {
+  navLinks: INavConst[] = NAV_CONST
 
+  protected readonly NAV_CONST = NAV_CONST;
 }
