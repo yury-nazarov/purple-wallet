@@ -1,4 +1,13 @@
-import {Component, EventEmitter, Input, Output} from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  EventEmitter,
+  inject,
+  Input,
+  OnDestroy,
+  Output,
+} from '@angular/core';
 import {NgClass, NgOptimizedImage} from '@angular/common';
 
 @Component({
@@ -6,12 +15,14 @@ import {NgClass, NgOptimizedImage} from '@angular/common';
   templateUrl: './nav-button.component.html',
   styleUrls: ['./nav-button.component.scss'],
   standalone: true,
-  imports: [
-    NgOptimizedImage,
-    NgClass
-  ]
+  imports: [NgOptimizedImage, NgClass],
 })
-export class NavButtonComponent {
+export class NavButtonComponent implements AfterViewInit, OnDestroy {
+  // С помощью Mutation Observer API получаем доступ к элементу DOM внутри нашей текущей кнопки
+  private _elementRef: ElementRef = inject(ElementRef);
+  // Объявляем поле класса
+  private _observer!: MutationObserver;
+
   public type = 'button';
   public isActive = false;
 
@@ -27,4 +38,23 @@ export class NavButtonComponent {
       this.clicked.emit(event);
     }
   }
+
+  // AfterViewInit - хук нужен для того, что бы срабатывать как только кнопка закончила перересовку
+  ngAfterViewInit(): void {
+    // Объявляем обсервер
+    this._observer = new MutationObserver(() => {
+      this.isActive = this._elementRef.nativeElement.classList.contains('active');
+    });
+
+    // Подписываемся на обсервер и передаем в него за каким элементом нужно следить
+    this._observer.observe(this._elementRef.nativeElement, {
+      attributes: true, // Сообщает обсерверу что нужно следить за изменениями атрибутов
+      attributeFilter: ['class'], // Отслеживаем только CSS Class
+    });
+  }
+  // Отписываемся от всех изменений
+  ngOnDestroy(): void {
+    this._observer?.disconnect();
+  }
 }
+
