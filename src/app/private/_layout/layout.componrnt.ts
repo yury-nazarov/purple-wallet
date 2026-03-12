@@ -18,7 +18,7 @@ import {INavConst, NAV_CONST} from '../../shared/const/menu-items.const';
   ]
 })
 export class PrivateLayoutComponent {
-  navLinks: INavConst[] = NAV_CONST
+  navLinks: INavConst[] = NAV_CONST;
 
   protected readonly NAV_CONST = NAV_CONST;
 }

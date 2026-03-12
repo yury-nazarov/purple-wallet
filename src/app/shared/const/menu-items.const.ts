@@ -35,4 +35,4 @@ export const NAV_CONST: INavConst[] = [
     link: '/private/exchange',
     id: 3,
   },
-]
+];

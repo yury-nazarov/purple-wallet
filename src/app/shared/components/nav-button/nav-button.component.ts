@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {NgClass, NgOptimizedImage} from '@angular/common';
-import {Event} from '@angular/router';
 
 @Component({
   selector: 'app-nav-button',
@@ -13,13 +12,13 @@ import {Event} from '@angular/router';
   ]
 })
 export class NavButtonComponent {
-  public type: string = 'button';
-  public isActive: boolean = false;
+  public type = 'button';
+  public isActive = false;
 
-  @Input() text: string = '';
-  @Input() iconUrl: string = '';
-  @Input() iconUrlActive: string = '';
-  @Input() disabled: boolean = false;
+  @Input() text = '';
+  @Input() iconUrl = '';
+  @Input() iconUrlActive = '';
+  @Input() disabled = false;
 
   @Output() clicked: EventEmitter<PointerEvent> = new EventEmitter<PointerEvent>();
 

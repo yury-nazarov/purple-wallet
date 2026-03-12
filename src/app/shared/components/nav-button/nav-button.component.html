@@ -5,7 +5,7 @@
   class="nav__button"
   (click)="onClick($event)"
 >
-  @if(isActive && iconUrlActive != null) {
+  @if(isActive && iconUrlActive !== null) {
     <img [ngSrc]="iconUrlActive" height="24" width="24" alt="active icon">
   } @else {
     <img [ngSrc]="iconUrl" height="24" width="24" alt="non-active icon">
