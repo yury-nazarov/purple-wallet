@@ -25,7 +25,14 @@
 
   <!-- Кнопка выхода -->
   <div class="start__exit-link">
-    Exit button
+    <app-nav-button
+      class="start__logout-button"
+      text="Выход"
+      iconUrl="icons/menu/logout.svg"
+      iconUrlActive="icons/menu/logout.svg"
+      (click)="onLogoutClick()"
+    ></app-nav-button>
+
   </div>
 </div>
 

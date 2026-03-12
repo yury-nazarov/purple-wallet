@@ -9,16 +9,14 @@ import {INavConst, NAV_CONST} from '../../shared/const/menu-items.const';
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.scss',
   standalone: true,
-  imports: [
-    RouterOutlet,
-    NgOptimizedImage,
-    NavButtonComponent,
-    RouterLink,
-    RouterLinkActive
-  ]
+  imports: [RouterOutlet, NgOptimizedImage, NavButtonComponent, RouterLink, RouterLinkActive],
 })
 export class PrivateLayoutComponent {
   navLinks: INavConst[] = NAV_CONST;
 
   protected readonly NAV_CONST = NAV_CONST;
+
+  onLogoutClick() {
+    console.log('Logout');
+  }
 }
