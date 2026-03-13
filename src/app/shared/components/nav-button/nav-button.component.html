@@ -2,6 +2,9 @@
   [ngClass]="{
     'nav__button--active': isActive,
   }"
+  [ngStyle]="{
+    'font-weight': isActive ? 'bold':'normal',
+  }"
   class="nav__button"
   (click)="onClick($event)"
 >

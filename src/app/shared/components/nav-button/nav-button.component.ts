@@ -8,14 +8,14 @@ import {
   OnDestroy,
   Output,
 } from '@angular/core';
-import {NgClass, NgOptimizedImage} from '@angular/common';
+import { NgClass, NgStyle, NgOptimizedImage } from '@angular/common';
 
 @Component({
   selector: 'app-nav-button',
   templateUrl: './nav-button.component.html',
   styleUrls: ['./nav-button.component.scss'],
   standalone: true,
-  imports: [NgOptimizedImage, NgClass],
+  imports: [NgOptimizedImage, NgClass, NgStyle],
 })
 export class NavButtonComponent implements AfterViewInit, OnDestroy {
   // С помощью Mutation Observer API получаем доступ к элементу DOM внутри нашей текущей кнопки
