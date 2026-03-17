@@ -1,1 +1,5 @@
-Assets
+@for(item of assets; track item.assetId) {
+  <app-asset class="asset" [data]="item"></app-asset>
+} @empty {
+  <p>Вы не добавили свои крипто активы</p>
+}
