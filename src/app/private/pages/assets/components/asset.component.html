@@ -7,14 +7,15 @@
       <span class="asset_name--full">{{ data.assetName }}</span>
       <span class="asset_name--short">{{ data.assetId }}</span>
     </div>
-    <div class="asset__value">{{ data.value }} {{ data.assetId | uppercase }}</div>
-    <div class="fiat__value">{{ data.valueInFiat  }} $ </div>
+    <div class="asset__value">{{ data.value | number: '1.2-2'}} {{ data.assetId | uppercase }}</div>
+    <div class="fiat__value">{{ data.valueInFiat | currency: "RUB": "symbol-narrow" }} </div>
     <div class="asset__rate"
     [ngClass]="{
     'asset__rate--success': data.rateChange > 0,
     'asset__rate--danger': data.rateChange <= 0,
     }" >
-      {{ data.rateChange !== 0 ? `${data.rateChange}%`: `0` }}
+      <!-- Доработать форматирование -->
+      {{ data.rateChange / 100 | percent }}
     </div>
     <div class="asset__rate-change">
       @if( data.rateChange > 0) {
