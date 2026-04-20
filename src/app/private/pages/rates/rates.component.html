@@ -1,1 +1,5 @@
-Rates
+@for (item of rates; track item.assetId) {
+  <app-rate [data]="item"></app-rate>
+} @empty {
+  <p>Данные не получены</p>
+}
